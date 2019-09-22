@@ -14,7 +14,7 @@
 // 文章列表頁
 Route::get('/posts', '\App\Http\Controllers\PostController@index');
 // 文章詳情頁
-Route::get('/posts{post}', '\App\Http\Controllers\PostController@show');
+Route::get('/posts/{post}', '\App\Http\Controllers\PostController@show');
 // 创建文章
 Route::get('/posts/create', '\App\Http\Controllers\PostController@create');
 Route::post('/posts/create', '\App\Http\Controllers\PostController@store');
