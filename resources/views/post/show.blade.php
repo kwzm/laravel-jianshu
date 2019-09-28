@@ -5,36 +5,28 @@
     <div class="blog-post">
         <div style="display:inline-flex">
             <h2 class="blog-post-title">
-                你好你好
+                {{$post->title}}
             </h2>
-            <a href="/posts/62/edit" style="margin: auto">
+            <a href="/posts/{{$post->id}}/edit" style="margin: auto">
                 <span aria-hidden="true" class="glyphicon glyphicon-pencil">
                 </span>
             </a>
-            <a href="/posts/62/delete" style="margin: auto">
+            <a href="/posts/{{$post->id}}/delete" style="margin: auto">
                 <span aria-hidden="true" class="glyphicon glyphicon-remove">
                 </span>
             </a>
         </div>
         <p class="blog-post-meta">
-            May 14, 2017 by
+            {{$post->created_at->toFormattedDateString()}} by
             <a href="#">
                 Kassandra Ankunding2
             </a>
         </p>
         <p>
-            <p>
-                你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
-                <img alt="63" src="http://127.0.0.1:8000/storage/72c76b674ec8793fcfd6555ff371bfbd/nxC9ozLfkORmoY92q9lPsejXchVvdNO2cwHiR2Jf.jpeg" style="max-width: 100%;">
-                    你好你好似懂非懂说
-                </img>
-            </p>
-            <p>
-                <br/>
-            </p>
+            {{$post->content}}
         </p>
         <div>
-            <a class="btn btn-primary btn-lg" href="/posts/62/zan" type="button">
+            <a class="btn btn-primary btn-lg" href="/posts/{{$post->id}}/zan" type="button">
                 赞
             </a>
         </div>
