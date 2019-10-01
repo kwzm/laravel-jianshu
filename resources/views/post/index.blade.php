@@ -62,7 +62,7 @@
                 </a>
             </p>
             <p>
-                {{str_limit($post->content, 100, '...')}}
+                {!!str_limit($post->content, 100, '...')!!}
                 <p class="blog-post-meta">
                     赞 0  | 评论 0
                 </p>

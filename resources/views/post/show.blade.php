@@ -23,7 +23,7 @@
             </a>
         </p>
         <p>
-            {{$post->content}}
+            {!!$post->content!!}
         </p>
         <div>
             <a class="btn btn-primary btn-lg" href="/posts/{{$post->id}}/zan" type="button">
