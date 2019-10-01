@@ -69,8 +69,12 @@ class PostController extends Controller {
 	}
 
 	// 删除逻辑
-	public function delete() {
+	public function delete(Post $post) {
+		// TODO: 用户权限认证
+		
+		$post->delete();
 
+		return redirect("/posts");
 	}
 
 	// 上传图片
