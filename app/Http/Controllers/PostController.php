@@ -17,14 +17,23 @@ class PostController extends Controller {
 		return view("post/show", compact('post'));
 	}
 
-	// 创建逻辑
+	// 创建页面
 	public function create() {
 		return view("post/create");
 	}
 
 	// 创建逻辑
 	public function store() {
+		// $post = new Post();
+		// $post->title = request('title');
+		// $post->content = request('content');
+		// $post->save();
 
+		// $params = ['title' => request('title'), 'content' => request('content')];
+		// $params = request(['title', 'content']);
+		$post = Post::create(request(['title', 'content']));
+
+		return redirect('/posts');	
 	}
 
 	// 编辑页面
