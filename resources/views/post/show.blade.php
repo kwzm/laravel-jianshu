@@ -7,19 +7,23 @@
             <h2 class="blog-post-title">
                 {{$post->title}}
             </h2>
+            @can('update', $post)
             <a href="/posts/{{$post->id}}/edit" style="margin: auto">
                 <span aria-hidden="true" class="glyphicon glyphicon-pencil">
                 </span>
             </a>
+            @endcan
+            @can('delete', $post)
             <a href="/posts/{{$post->id}}/delete" style="margin: auto">
                 <span aria-hidden="true" class="glyphicon glyphicon-remove">
                 </span>
             </a>
+            @endcan
         </div>
         <p class="blog-post-meta">
             {{$post->created_at->toFormattedDateString()}} by
             <a href="#">
-                Kassandra Ankunding2
+                {{$post->user->name}}
             </a>
         </p>
         <p>

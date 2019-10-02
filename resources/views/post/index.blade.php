@@ -58,7 +58,7 @@
             <p class="blog-post-meta">
                 {{$post->created_at->toFormattedDateString()}} by
                 <a href="/user/5">
-                    Kassandra Ankunding2
+                    {{$post->user->name}}
                 </a>
             </p>
             <p>
