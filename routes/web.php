@@ -19,9 +19,9 @@ Route::post('/register', '\App\Http\Controllers\RegisterController@register');
 // 登录页面
 Route::get('/login', '\App\Http\Controllers\LoginController@index');
 // 登录行为
-Route::post('/login', '\App\Http\Controllers\RegisterController@login');
+Route::post('/login', '\App\Http\Controllers\LoginController@login');
 // 登出行为
-Route::get('/logout', '\App\Http\Controllers\RegisterController@logout');
+Route::get('/logout', '\App\Http\Controllers\LoginController@logout');
 // 个人设置页面
 Route::get('/user/me/setting', '\App\Http\Controllers\UserController@setting');
 // 个人设置操作
