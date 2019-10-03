@@ -15,6 +15,7 @@ class PostController extends Controller {
 
 	// 详情页面
 	public function show(Post $post) {
+		$post->load('comments');
 		return view("post/show", compact('post'));
 	}
 
