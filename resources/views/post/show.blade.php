@@ -59,9 +59,8 @@
         </div>
         <!-- List group -->
         <ul class="list-group">
-            <form action="/posts/comment" method="post">
-                <input name="_token" type="hidden" value="4BfTBDF90Mjp8hdoie6QGDPJF2J5AgmpsC9ddFHD">
-                    <input name="post_id" type="hidden" value="62"/>
+            <form action="/posts/{{$post->id}}/comment" method="post">
+                    {{ csrf_field() }}
                     <li class="list-group-item">
                         <textarea class="form-control" name="content" rows="10">
                         </textarea>
