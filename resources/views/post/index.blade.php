@@ -64,7 +64,7 @@
             <p>
                 {!!str_limit($post->content, 100, '...')!!}
                 <p class="blog-post-meta">
-                    赞 0  | 评论 0
+                    赞 0  | 评论 {{$post->comments_count}}
                 </p>
             </p>
         </div>
