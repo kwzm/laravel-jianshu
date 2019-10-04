@@ -30,9 +30,15 @@
             {!!$post->content!!}
         </p>
         <div>
+            @if ($post->zan(\Auth::id())->exists())
+            <a class="btn btn-default btn-lg" href="/posts/{{$post->id}}/unzan" type="button">
+                取消赞
+            </a>
+            @else
             <a class="btn btn-primary btn-lg" href="/posts/{{$post->id}}/zan" type="button">
                 赞
             </a>
+            @endif
         </div>
     </div>
     <div class="panel panel-default">
