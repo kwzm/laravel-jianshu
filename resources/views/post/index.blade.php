@@ -57,7 +57,7 @@
             </h2>
             <p class="blog-post-meta">
                 {{$post->created_at->toFormattedDateString()}} by
-                <a href="/user/5">
+                <a href="/user/{{$post->user->id}}">
                     {{$post->user->name}}
                 </a>
             </p>

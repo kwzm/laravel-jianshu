@@ -49,7 +49,7 @@ class User extends Authenticatable
     }
 
     // 取消关注某人
-    public function unDoFan($uid) {
+    public function doUnFan($uid) {
         $fan = new \App\Fan();
         $fan->star_id = $uid;
         return $this->stars()->delete($fan);
