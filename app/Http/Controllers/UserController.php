@@ -39,4 +39,19 @@ class UserController extends Controller
     	// 渲染
     	return back();
     }
+
+    // 个人中心页面
+    public function show() {
+        return view('user/show');
+    }
+
+    // 关注用户
+    public function fan() {
+        return ;
+    }
+
+    // 取消关注
+    public function unfan() {
+        return ;
+    }
 }
