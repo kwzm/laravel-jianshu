@@ -53,4 +53,9 @@ Route::group(['middleware' => 'auth:web'], function() {
     Route::get('/user/{user}', '\App\Http\Controllers\UserController@show');
     Route::get('/user/{user}/fan', '\App\Http\Controllers\UserController@fan');
     Route::get('/user/{user}/unfan', '\App\Http\Controllers\UserController@unfan');
+
+    // 专题详情页
+    Route::get('/topic/{topic}', '\App\Http\Controllers\TopicController@show');
+    // 投稿
+    Route::get('/topic/{topic}/submit', '\App\Http\Controllers\TopicController@submit');
 });
