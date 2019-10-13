@@ -59,3 +59,5 @@ Route::group(['middleware' => 'auth:web'], function() {
     // 投稿
     Route::get('/topic/{topic}/submit', '\App\Http\Controllers\TopicController@submit');
 });
+
+include_once('admin.php');
