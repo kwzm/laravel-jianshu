@@ -14,26 +14,24 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <table class="table table-bordered">
-                            <tbody><tr>
-                                <th style="width: 10px">#</th>
-                                <th>用户名称</th>
-                                <th>操作</th>
-                            </tr>
-                                                            <tr>
-                                    <td>2.</td>
-                                    <td>test1</td>
+                            <tbody>
+                                <tr>
+                                    <th style="width: 10px">#</th>
+                                    <th>用户名称</th>
+                                    <th>操作</th>
+                                </tr>
+                                @foreach($users as $user)
+                                <tr>
+                                    <td>{{$user->id}}</td>
+                                    <td>{{$user->name}}</td>
                                     <td>
-                                        <a type="button" class="btn" href="/admin/users/2/role" >角色管理</a>
+                                        <a type="button" class="btn" href="/admin/users/{{$user->id}}/role" >角色管理</a>
                                     </td>
                                 </tr>
-                                                            <tr>
-                                    <td>3.</td>
-                                    <td>test2</td>
-                                    <td>
-                                        <a type="button" class="btn" href="/admin/users/3/role" >角色管理</a>
-                                    </td>
-                                </tr>
-                                                        </tbody></table>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        {{$users->links()}}
                     </div>
 
                 </div>
