@@ -1,60 +1,44 @@
 @extends("admin.layout.main")
 @section("content")
-    <section class="content">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-            <div class="col-lg-10 col-xs-6">
-                <div class="box">
-
-                    <div class="box-header with-border">
-                        <h3 class="box-title">权限列表</h3>
-                    </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                        <form action="/admin/roles/1/permission" method="POST">
-                            <input type="hidden" name="_token" value="RPPMc0lhvtynKELDZljXlz9UZI9uNc55ip1P8GCM">
+<section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-lg-10 col-xs-6">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">
+                        权限列表
+                    </h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <form action="/admin/roles/{{$role->id}}/permission" method="POST">
+                        {{csrf_field()}}
                             <div class="form-group">
-                                                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="permissions[]"
-                                                                                                      checked
-                                                                                                      value="1">
-                                            system
-                                        </label>
-                                    </div>
-                                                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="permissions[]"
-                                                                                                      checked
-                                                                                                      value="2">
-                                            post
-                                        </label>
-                                    </div>
-                                                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="permissions[]"
-                                                                                                      value="3">
-                                            topic
-                                        </label>
-                                    </div>
-                                                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="permissions[]"
-                                                                                                      value="4">
-                                            notice
-                                        </label>
-                                    </div>
-                                                            </div>
-                            <div class="box-footer">
-                                <button type="submit" class="btn btn-primary">提交</button>
+                                @foreach($permissions as $permission)
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="permissions[]" type="checkbox"
+                                            @if ($myPermissions->contains($permission)) 
+                                            checked
+                                            @endif
+                                            value="{{$permission->id}}">
+                                            {{$permission->name}}
+                                        </input>
+                                    </label>
+                                </div>
+                                @endforeach
                             </div>
-                        </form>
-
-
-                    </div>
+                            <div class="box-footer">
+                                <button class="btn btn-primary" type="submit">
+                                    提交
+                                </button>
+                            </div>
+                        </input>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 @endsection
-       
