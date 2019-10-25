@@ -3,11 +3,6 @@
 namespace App\Admin\Controllers;
 
 class LoginController extends Controller {
-
-    public function welcome() {
-        redirect('/login');
-    }
-
 	// 登录展示页
 	public function index() {
 		return view('admin.login.index');

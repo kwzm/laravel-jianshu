@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
+
+    public function welcome() {
+        return redirect('/login');
+    }
+
     // 登录页面
     public function index(){
     	if(\Auth::check()) {
